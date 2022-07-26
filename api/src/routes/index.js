@@ -4,7 +4,7 @@ const iecho = require('./iecho.js');
 
 const router = Router();
 
-router.get('/iecho', iecho);
+router.use('/iecho', iecho);
 
 
 module.exports = router;
