@@ -3,19 +3,28 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha tests/api.test.js",
     "start": "nodemon index.js -L"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": ">=12.18.3",
+    "node": ">=12.0.0",
     "npm": ">=6.14.6"
   },
   "dependencies": {
     "express": "^4.18.1",
-    "morgan": "^1.10.0",
     "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "mocha": "^10.0.0",
+    "supertest": "^6.2.4"
   }
 }
