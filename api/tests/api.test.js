@@ -22,6 +22,19 @@ describe('GET /iecho', () => {
                 done();
             });
     })
+    it('should return a 200 response with a reversed text of the query string and the flag "palindrome" if the text is a palindrome', (done) => {
+        request(app)
+            .get('/iecho?text=Neuquen&palindrome=true')
+            .expect(200)
+            .expect({
+                text:'neuqueN',
+                palindrome: true
+            })
+            .end((err) => {
+                if (err) return done(err);
+                done();
+            });
+    })
     it('should return with a 400 response and a error message "no text" if no text is provided', (done) => {
         request(app)
             .get('/iecho')
