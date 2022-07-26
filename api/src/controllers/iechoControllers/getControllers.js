@@ -1,10 +1,14 @@
 function reverse(text) {
-    return text.split('').reverse().join('');
+    const reversed = text.split('').reverse().join('');
+    if(reversed.toLowerCase() === text.toLowerCase()){
+        return {text: reversed, isPalindrome: true};
+    }
+    return {text: reversed, isPalindrome: false};
 }
 
 const reverseText = async (text) => {
     try{
-        const result = await reverse(text);
+        const result = reverse(text);
         return result;
     } catch(err){
         console.log(err);

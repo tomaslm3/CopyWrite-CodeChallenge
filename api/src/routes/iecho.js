@@ -7,9 +7,16 @@ router.get('/', async function(req, res) {
     try{
         if(typeof text === 'string' && text.length > 0){
         const result = await reverseText(text);
-            res.status(200).json({
-                text: result
-            });
+            if(result.isPalindrome === true){
+                res.status(200).json({
+                    text: result.text,
+                    palindrome: true
+                });
+            } else {
+                res.status(200).json({
+                    text: result.text  
+                });
+            }
         } else {
         res.status(400).json({
             error: 'no text'
