@@ -3,7 +3,7 @@ import axios from "axios";
 export function iecho(payload) {
     return async function (dispatch) {
         try {
-            var json = await axios.get(`http://localhost:3001/iecho?text=${payload}`)
+            var json = await axios.get(`/iecho?text=${payload}`)
             return dispatch({
                 type: "IECHO",
                 payload: json.data
