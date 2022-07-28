@@ -1,5 +1,5 @@
 const initialState = {
-  echo: []
+  echoes: []
 }
 
 function rootReducer(state = initialState, action) {
@@ -7,7 +7,7 @@ function rootReducer(state = initialState, action) {
     case "IECHO":
       return {
         ...state,
-        echo: action.payload
+        echoes: state.echoes.concat(action.payload)
       }
     default:
       return state
