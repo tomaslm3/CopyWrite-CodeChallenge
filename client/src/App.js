@@ -9,8 +9,11 @@ import { iecho } from "./redux/actions/index";
 function App() {
   
   const dispatch = useDispatch();
+
+  // Take the state from the store
   const allEchoes = useSelector(state => state.echoes);
 
+  // Set the state with the user's input
   const [echo, setEcho] = useState('');
 
   useEffect(() => {

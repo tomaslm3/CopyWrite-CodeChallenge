@@ -4,11 +4,12 @@ import { Button, InputBase } from '@mui/material';
 function SearchBar(setEcho) {
     const [text, setText] = useState("");
 
+    // take the text from the input and set it to the state
     function handleInputText(e) {
         setText(e.target.value);
     }
 
-
+    // when the user clicks the button, set the text to the state and send it to the parent component
     function handleSubmit(e) {
         setEcho.setEcho.setEcho(text);
         

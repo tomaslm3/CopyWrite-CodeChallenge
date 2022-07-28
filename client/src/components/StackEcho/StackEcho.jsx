@@ -14,9 +14,11 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function StackEcho(allEchoes) {
+  // Take the allEchoes from the parent component and map them to the Stack
     const newEchoes = allEchoes.allEchoes.allEchoes
         
   return (
+    // Before the map, use slice and reverse to inverse the order of the array
     <Box sx={{ width: '60%', margin: 'auto' }}>
       <Stack spacing={2}>
         {newEchoes && newEchoes.slice(0).reverse().map((echo, index) => (
